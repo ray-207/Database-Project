@@ -1,0 +1,1 @@
+Masing masing buat sendiri querynya, terus nanti disortir, query mana yg lebih bagus. Terus kalo udh digabung jadi 1 file (queries.sql).
