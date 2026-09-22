@@ -15,7 +15,6 @@ CREATE TABLE Items(
 CREATE TABLE Invoices(
 	InvoiceID CHAR(6) PRIMARY KEY,
 	InvoiceDate DATETIME,
-	InvoiceStatus VARCHAR(10),
     CustomerID CHAR(5),
 	FOREIGN KEY (CustomerID)
         REFERENCES Customers(CustomerID)
