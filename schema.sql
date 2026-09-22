@@ -14,7 +14,7 @@ CREATE TABLE Items(
 );
 
 CREATE TABLE Invoices(
-	InvoiceID CHAR(6) PRIMARY KEY,
+	InvoiceID CHAR(7) PRIMARY KEY,
 	InvoiceDate DATETIME NOT NULL,
   CustomerID CHAR(5),
 	FOREIGN KEY (CustomerID)
@@ -26,7 +26,7 @@ CREATE TABLE Invoices(
 CREATE TABLE ItemOrder(
   ItemOrderID INT AUTO_INCREMENT PRIMARY KEY,
   Quantity INT NOT NULL,
-  InvoiceID CHAR(6),
+  InvoiceID CHAR(7),
   StockCode CHAR(5),
   FOREIGN KEY (InvoiceID)
     REFERENCES Invoices(InvoiceID)
@@ -36,5 +36,5 @@ CREATE TABLE ItemOrder(
     REFERENCES Items(StockCode)
     ON DELETE RESTRICT
     ON UPDATE RESTRICT,
-  CONSTRAINT check_quantity CHECK(Quantity > 0)
+  CONSTRAINT check_quantity CHECK(Quantity != 0) -- You can't really buy an item with 0 amount, can you?
 );
