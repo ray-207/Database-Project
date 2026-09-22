@@ -1,4 +1,4 @@
--- CREATE DATABASE KoDesDB;
+CREATE DATABASE KoDesDB;
 USE kodesdb;
 
 CREATE TABLE Customers(
@@ -9,15 +9,16 @@ CREATE TABLE Customers(
 CREATE TABLE Items(
 	StockCode CHAR(5) PRIMARY KEY,
 	ItemDescription VARCHAR(100) NOT NULL,
-	Price INT
+	Price INT NOT NULL,
+  CONSTRAINT price_check CHECK(Price > 0)
 );
 
 CREATE TABLE Invoices(
 	InvoiceID CHAR(6) PRIMARY KEY,
-	InvoiceDate DATETIME,
-    CustomerID CHAR(5),
+	InvoiceDate DATETIME NOT NULL,
+  CustomerID CHAR(5),
 	FOREIGN KEY (CustomerID)
-        REFERENCES Customers(CustomerID)
+    REFERENCES Customers(CustomerID)
 );
 
 CREATE TABLE ItemOrder(
@@ -28,5 +29,6 @@ CREATE TABLE ItemOrder(
   FOREIGN KEY (InvoiceID)
     REFERENCES Invoices(InvoiceID),
   FOREIGN KEY (StockCode)
-    REFERENCES Items(StockCode)
+    REFERENCES Items(StockCode),
+  CONSTRAINT check_quantity CHECK(Quantity > 0)
 );
