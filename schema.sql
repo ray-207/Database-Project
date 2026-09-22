@@ -19,6 +19,8 @@ CREATE TABLE Invoices(
   CustomerID CHAR(5),
 	FOREIGN KEY (CustomerID)
     REFERENCES Customers(CustomerID)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE
 );
 
 CREATE TABLE ItemOrder(
@@ -27,8 +29,12 @@ CREATE TABLE ItemOrder(
   InvoiceID CHAR(6),
   StockCode CHAR(5),
   FOREIGN KEY (InvoiceID)
-    REFERENCES Invoices(InvoiceID),
+    REFERENCES Invoices(InvoiceID)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   FOREIGN KEY (StockCode)
-    REFERENCES Items(StockCode),
+    REFERENCES Items(StockCode)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
   CONSTRAINT check_quantity CHECK(Quantity > 0)
 );
