@@ -7,7 +7,7 @@ CREATE TABLE Customers(
 );
 
 CREATE TABLE Items(
-	StockCode CHAR(5) PRIMARY KEY,
+	StockCode CHAR(6) PRIMARY KEY,
 	ItemDescription VARCHAR(100) NOT NULL,
 	Price INT NOT NULL,
   CONSTRAINT price_check CHECK(Price > 0)
@@ -27,7 +27,7 @@ CREATE TABLE ItemOrder(
   ItemOrderID INT AUTO_INCREMENT PRIMARY KEY,
   Quantity INT NOT NULL,
   InvoiceID CHAR(7),
-  StockCode CHAR(5),
+  StockCode CHAR(6),
   FOREIGN KEY (InvoiceID)
     REFERENCES Invoices(InvoiceID)
     ON DELETE CASCADE
