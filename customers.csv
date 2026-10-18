@@ -580,11 +580,9 @@ CustomerID,Country
 13081,United Kingdom
 14605,United Kingdom
 14337,United Kingdom
-16703,United Kingdom
 14285,United Kingdom
 16892,United Kingdom
 16523,United Kingdom
-16805,United Kingdom
 13204,United Kingdom
 15924,United Kingdom
 15823,United Kingdom
@@ -831,7 +829,6 @@ CustomerID,Country
 17910,United Kingdom
 16551,United Kingdom
 15577,United Kingdom
-12346,United Kingdom
 12439,Cyprus
 13462,United Kingdom
 13013,United Kingdom
@@ -862,6 +859,7 @@ CustomerID,Country
 14796,United Kingdom
 14042,United Kingdom
 15867,United Kingdom
+16805,United Kingdom
 16125,United Kingdom
 13591,United Kingdom
 16280,United Kingdom
@@ -1331,37 +1329,6 @@ CustomerID,Country
 13514,United Kingdom
 15766,United Kingdom
 15959,United Kingdom
-12745,EIRE
-16154,United Kingdom
-12606,Spain
-13054,United Kingdom
-12454,Spain
-15383,United Kingdom
-12706,Finland
-12404,Finland
-16840,United Kingdom
-12382,Netherlands
-12466,France
-16291,Portugal
-12555,Spain
-12858,United Kingdom
-14912,Italy
-12846,United Kingdom
-16575,United Kingdom
-13664,United Kingdom
-16047,EIRE
-12792,Portugal
-12696,Finland
-17130,United Kingdom
-15357,Unspecified
-13776,United Kingdom
-14380,United Kingdom
-14079,United Kingdom
-17672,United Kingdom
-12497,Germany
-15702,Nigeria
-14358,United Kingdom
-12570,Spain
 15073,United Kingdom
 13698,United Kingdom
 16051,United Kingdom
@@ -1468,6 +1435,7 @@ CustomerID,Country
 16928,United Kingdom
 13757,United Kingdom
 17311,United Kingdom
+16840,United Kingdom
 16081,United Kingdom
 14399,United Kingdom
 12396,RSA
@@ -1816,6 +1784,7 @@ CustomerID,Country
 13797,United Kingdom
 13126,United Kingdom
 14818,United Kingdom
+12346,United Kingdom
 15927,United Kingdom
 16960,United Kingdom
 16177,United Kingdom
@@ -1866,6 +1835,7 @@ CustomerID,Country
 13280,United Kingdom
 12568,Germany
 13476,United Kingdom
+12497,Germany
 18226,United Kingdom
 14957,United Kingdom
 14186,United Kingdom
@@ -1919,6 +1889,7 @@ CustomerID,Country
 17960,United Kingdom
 16628,United Kingdom
 17289,United Kingdom
+17672,United Kingdom
 17025,United Kingdom
 16537,United Kingdom
 17488,United Kingdom
@@ -2456,6 +2427,7 @@ CustomerID,Country
 16408,United Kingdom
 16267,United Kingdom
 12744,Singapore
+14912,Italy
 16138,United Kingdom
 14237,United Kingdom
 14978,United Kingdom
@@ -2627,6 +2599,7 @@ CustomerID,Country
 16588,United Kingdom
 14296,United Kingdom
 13300,United Kingdom
+12745,United Kingdom
 16922,United Kingdom
 18258,United Kingdom
 17123,United Kingdom
@@ -2951,6 +2924,7 @@ CustomerID,Country
 14793,United Kingdom
 16680,United Kingdom
 17422,United Kingdom
+12792,Portugal
 17380,United Kingdom
 14725,United Kingdom
 17310,United Kingdom
@@ -3117,6 +3091,7 @@ CustomerID,Country
 14674,United Kingdom
 16089,United Kingdom
 14599,United Kingdom
+12696,Finland
 16861,United Kingdom
 15788,United Kingdom
 17395,United Kingdom
@@ -3308,6 +3283,7 @@ CustomerID,Country
 15322,United Kingdom
 14243,United Kingdom
 16396,United Kingdom
+15702,Nigeria
 15855,United Kingdom
 17471,United Kingdom
 12450,Spain
@@ -3533,7 +3509,6 @@ CustomerID,Country
 17919,United Kingdom
 17315,United Kingdom
 15616,United Kingdom
-16879,United Kingdom
 12348,Finland
 16211,United Kingdom
 17524,United Kingdom
@@ -3646,7 +3621,6 @@ CustomerID,Country
 15346,United Kingdom
 16061,United Kingdom
 13035,United Kingdom
-16446,United Kingdom
 14314,United Kingdom
 13177,United Kingdom
 13964,United Kingdom
@@ -3692,6 +3666,7 @@ CustomerID,Country
 15314,United Kingdom
 16350,United Kingdom
 15931,United Kingdom
+14358,United Kingdom
 16111,United Kingdom
 15598,United Kingdom
 17196,United Kingdom
@@ -3781,6 +3756,7 @@ CustomerID,Country
 14956,United Kingdom
 15114,United Kingdom
 15626,United Kingdom
+12454,Spain
 13829,United Kingdom
 12694,France
 14088,United Kingdom
@@ -4192,6 +4168,7 @@ CustomerID,Country
 12967,United Kingdom
 12887,United Kingdom
 12728,France
+12858,United Kingdom
 15155,United Kingdom
 16367,United Kingdom
 17275,United Kingdom
@@ -4913,6 +4890,7 @@ CustomerID,Country
 14888,United Kingdom
 13456,United Kingdom
 12690,France
+16446,United Kingdom
 16818,United Kingdom
 13572,United Kingdom
 15116,United Kingdom
@@ -5190,6 +5168,7 @@ CustomerID,Country
 18282,United Kingdom
 12610,Italy
 13200,United Kingdom
+14079,United Kingdom
 16066,United Kingdom
 12885,United Kingdom
 17331,United Kingdom
