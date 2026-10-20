@@ -9,7 +9,7 @@ CREATE TABLE Customers(
 CREATE TABLE Items(
 	StockCode CHAR(6) PRIMARY KEY,
 	ItemDescription VARCHAR(100) NOT NULL,
-	Price DECIMAL NOT NULL,
+	Price DECIMAL(10,2) NOT NULL,
   CONSTRAINT price_check CHECK(Price > 0)
 );
 
