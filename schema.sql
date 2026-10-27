@@ -10,6 +10,8 @@ CREATE TABLE Items(
 	StockCode CHAR(6) PRIMARY KEY,
 	ItemDescription VARCHAR(100) NOT NULL,
 	Price DECIMAL(10,2) NOT NULL,
+  StockAvailable INT NOT NULL
+  CONSTRAINT stock_available_check CHECK (StockAvailable >= 0),
   CONSTRAINT price_check CHECK(Price > 0)
 );
 
