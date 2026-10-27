@@ -11,7 +11,7 @@ CREATE TABLE Items(
 	ItemDescription VARCHAR(100) NOT NULL,
 	Price DECIMAL(10,2) NOT NULL,
   StockAvailable INT NOT NULL
-  CONSTRAINT StockAvailable CHECK (StockAvailable >= 0)
+  CONSTRAINT stock_available_check CHECK (StockAvailable >= 0),
   CONSTRAINT price_check CHECK(Price > 0)
 );
 
