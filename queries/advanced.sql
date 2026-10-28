@@ -1,4 +1,5 @@
 -- Update stock inventory upon making a transaction
+DROP TRIGGER IF EXISTS stock_inventory_update;
 DELIMITER $$
 CREATE TRIGGER stock_inventory_update
 AFTER INSERT ON ItemOrder
@@ -7,7 +8,7 @@ BEGIN
     UPDATE Items
     SET StockAvailable = StockAvailable - NEW.Quantity
     WHERE StockCode = NEW.StockCode
-      AND StockAvailable >= NEW.Quantity;
+      AND StockAvailable >= NEW.Quantity;s
 
     IF ROW_COUNT() = 0 THEN
         SIGNAL SQLSTATE '45000'
@@ -15,6 +16,21 @@ BEGIN
     END IF;
 END $$
 DELIMITER ;
+
+-- Contoh Trigger
+START TRANSACTION;
+SET SQL_SAFE_UPDATES = 0;
+SET SQL_SAFE_UPDATES = 1; -- After ur done
+SELECT	* FROM items
+WHERE StockCode LIKE '21755';
+INSERT INTO itemorder(Quantity, InvoiceID, StockCode) -- 13048
+VALUES
+ (5, '489434', '21755');
+
+SELECT	* FROM items
+WHERE StockCode LIKE '21755';
+
+ROLLBACK;
 
 -- A procedure
 DROP PROCEDURE IF EXISTS GetCustomerInvoiceHistory;

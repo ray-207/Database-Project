@@ -71,5 +71,5 @@ INNER JOIN Items t5 ON t1.StockCode = t5.StockCode
 WHERE t3.InvoiceID NOT LIKE 'C%'
 GROUP BY t1.StockCode, t5.ItemDescription
 HAVING 
-    SUM(CASE WHEN t4.CountryOrigin = 'Germany' THEN 1 ELSE 0 END) = 0
+    COUNT(IF(t4.`CountryOrigin` = 'Germany', 1, NULL)) = 0
     AND COUNT(DISTINCT t4.CountryOrigin) >= 2;
