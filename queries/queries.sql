@@ -11,16 +11,47 @@ COMMIT;
 
 -- Query 2
 START TRANSACTION;
+SET SQL_SAFE_UPDATES = 0;
+SET SQL_SAFE_UPDATES = 1; -- After ur done
+INSERT INTO Invoices(`InvoiceID`, `InvoiceDate`, `CustomerID`) 
+VALUES
+(CONCAT('C', '536365'), NOW(), '17850'); -- Example InvoiceID is 536365, the customerID is gotten from the same row in the invoices table
 
-UPDATE Invoices
-SET InvoiceID = CONCAT('C', InvoiceID)
-WHERE InvoiceID = '536365';
+-- COMMIT;
+-- ROLLBACK;
 
-UPDATE ItemOrder
-SET Quantity = Quantity * -1
-WHERE InvoiceID = 'C536365';
+START TRANSACTION;
+--- Simulating a full return of an invoice
+INSERT INTO itemorder(`Quantity`, `InvoiceID`, `StockCode`)
+SELECT
+    t1.`Quantity` * -1,
+    CONCAT('C', t2.`InvoiceID`),
+    t1.`StockCode`
+FROM itemorder t1
+INNER JOIN invoices t2 ON t1.`InvoiceID` = t2.`InvoiceID`
+WHERE t2.InvoiceID = '536365';
+-- COMMIT;
+-- ROLLBACK;
 
-COMMIT;
+START TRANSACTION;
+-- Simulating a partial return of an invoice (You have to specify which item to return and how many to return)
+INSERT INTO itemorder(`Quantity`, `InvoiceID`, `StockCode`)
+SELECT
+    t1.`Quantity` * -1 + (t1.`Quantity` - 2), -- Specify the quantity you want to return. In this case, 2
+    CONCAT('C', t2.`InvoiceID`),
+    t1.`StockCode`
+FROM itemorder t1
+INNER JOIN invoices t2 ON t1.`InvoiceID` = t2.`InvoiceID`
+WHERE t2.InvoiceID = '536365' and t1.`StockCode` = '85123A';
+
+SELECT * FROM itemorder
+WHERE InvoiceID LIKE '%536365';
+
+SELECT * FROM invoices
+WHERE InvoiceID like '%536365';
+
+-- COMMIT;
+-- ROLLBACK;
 
 -- Query 3:
 SELECT 
