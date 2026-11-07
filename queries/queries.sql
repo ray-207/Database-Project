@@ -7,7 +7,10 @@ UPDATE Items
 SET Price = Price * 1.08
 WHERE Price < 5.00;
 
-COMMIT;
+
+SELECT * FROM items;
+-- COMMIT;
+-- ROLLBACK;
 
 -- Query 2
 START TRANSACTION;

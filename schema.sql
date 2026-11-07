@@ -26,10 +26,11 @@ CREATE TABLE Invoices(
 );
 
 CREATE TABLE ItemOrder(
-  ItemOrderID INT AUTO_INCREMENT PRIMARY KEY,
+  -- ItemOrderID INT AUTO_INCREMENT PRIMARY KEY, 
   Quantity INT NOT NULL,
   InvoiceID CHAR(7),
   StockCode CHAR(7),
+  PRIMARY KEY (InvoiceID, StockCode), -- Composite key
   FOREIGN KEY (InvoiceID)
     REFERENCES Invoices(InvoiceID)
     ON DELETE CASCADE
