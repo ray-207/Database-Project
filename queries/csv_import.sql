@@ -27,7 +27,7 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS
-(StockCode, ItemDescription, Price, StockAvailable);
+(StockCode, ItemDescription, CurrentPrice, StockAvailable);
 
 LOAD DATA LOCAL INFILE 'C:/your/path/to/itemOrder.csv/here'
 INTO TABLE itemorder
@@ -35,4 +35,4 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS
-(Quantity, InvoiceID, StockCode);
+(InvoiceID, StockCode, Quantity, BoughtPrice);
