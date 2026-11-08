@@ -12,18 +12,19 @@ CREATE TABLE Items(
 	CurrentPrice DECIMAL(10,2) NOT NULL,
   StockAvailable INT NOT NULL
   CONSTRAINT stock_available_check CHECK (StockAvailable >= 0),
-  CONSTRAINT price_check CHECK(Price > 0)
+  CONSTRAINT price_check CHECK(CurrentPrice > 0)
 );
 
 CREATE TABLE ItemHistory(
   ItemHistoryID INT AUTO_INCREMENT PRIMARY KEY,
   StockCode CHAR(7) NOT NULL,
   PreviousPrice DECIMAL(10,2) NOT NULL,
-  DateChanged DATETIME NOT NULL,
+  DateChanged DATETIME NOT NULL SET DEFAULT NOW(),
   FOREIGN KEY (StockCode)
     REFERENCES Items(StockCode)
     ON DELETE RESTRICT
-    ON UPDATE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT prev_price_check CHECK (PreviousPrice > 0)
 );
 
 CREATE TABLE Invoices(
@@ -50,5 +51,6 @@ CREATE TABLE ItemOrder(
     REFERENCES Items(StockCode)
     ON DELETE RESTRICT
     ON UPDATE RESTRICT,
-  CONSTRAINT check_quantity CHECK(Quantity != 0) -- You can't really buy an item with 0 amount, can you?
+  CONSTRAINT check_quantity CHECK(Quantity != 0), -- You can't really buy an item with 0 amount, can you?
+  CONSTRAINT bought_price_check CHECK(BoughtPrice > 0)
 );
